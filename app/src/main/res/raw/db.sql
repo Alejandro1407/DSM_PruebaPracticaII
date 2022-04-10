@@ -1,11 +1,11 @@
 CREATE TABLE marcas (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    nombre VARCHAR (45) 
+    nombre VARCHAR (45) NOT NULL UNIQUE
 );
 
 CREATE TABLE colores (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    descripcion VARCHAR (45)
+    descripcion VARCHAR (45) NOT NULL UNIQUE
 );
 
 CREATE TABLE tipo_automovil (
@@ -17,7 +17,7 @@ INSERT INTO tipo_automovil (descripcion) VALUES ("SEDAN"),("CAMION"),("PICK UP")
 
 CREATE TABLE role (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    role VARCHAR (45)
+    role VARCHAR (45) NOT NULL UNIQUE
 );
 
 INSERT INTO ROLE (role) VALUES ("ADMIN"),("CLIENT");
@@ -43,7 +43,7 @@ CREATE TABLE automovil (
     numero_asientos INTEGER,
     anio INTEGER,
     capacidad_asientos INT,
-    precio DECIMAL (10,2),
+    precio FLOAT (10,2),
     uri_img VARCHAR (45),
     descripcion VARCHAR (45),
     fk_automovil_marcas_idx INT,

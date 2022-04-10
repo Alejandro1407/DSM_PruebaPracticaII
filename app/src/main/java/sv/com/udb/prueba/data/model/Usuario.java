@@ -10,7 +10,7 @@ public class Usuario {
     @Id
     private Integer id;
 
-    @Column(name = "nombres")
+    @Column
     private String nombres;
 
     @Column
@@ -25,8 +25,10 @@ public class Usuario {
     @Column
     private String password;
 
-    @Column(name = "tipo")
+    @Column(name = "fk_usuario_role_idx")
     private Integer type;
+
+    public Usuario(){}
 
     public Usuario(Integer id, String nombres, String apellidos, String email, String user, String password, Integer type) {
         this.id = id;
