@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,9 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import sv.com.udb.prueba.R;
-import sv.com.udb.prueba.ui.login.LoginViewModel;
-import sv.com.udb.prueba.ui.login.LoginViewModelFactory;
+import sv.com.udb.prueba.data.model.LoggedInUser;
+import sv.com.udb.prueba.data.model.Usuario;
 import sv.com.udb.prueba.databinding.ActivityLoginBinding;
+import sv.com.udb.prueba.db.LoginRepositiory;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -122,6 +124,14 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         });
+
+        LoginRepositiory repositiory = new LoginRepositiory(getApplicationContext());
+        try {
+            repositiory.delete(new Usuario(1,"Victor","Galvez","alejoalejandro714@gmail.com","alejandroA","12345",1));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
