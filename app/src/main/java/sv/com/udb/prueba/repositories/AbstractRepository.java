@@ -15,10 +15,10 @@ import sv.com.udb.prueba.exceptions.InvalidRepositoryException;
 
 abstract class AbstractRepository<T,K> {
 
-    private static volatile SQLiteDatabase database;
-    private static volatile ORMDatabaseHelper ormDatabaseHelper;
-    private volatile Dao<T,K> genericDao;
     private Class<T> genericType;
+    protected volatile Dao<T,K> genericDao;
+    protected static volatile SQLiteDatabase database;
+    private static volatile ORMDatabaseHelper ormDatabaseHelper;
 
     public AbstractRepository(Context c){
         this.genericType = (Class<T>) ((ParameterizedType) getClass()
