@@ -1,8 +1,6 @@
 package sv.com.udb.prueba.repositories;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -21,11 +19,9 @@ public final class LoginRepositiory extends AbstractRepository<Usuario,Integer> 
         Map<String,Object> fields = new HashMap<>();
         fields.put("user",user);
         fields.put("password",pass);
-
         try {
             List<Usuario> response = genericDao.queryForFieldValues(fields);
-            return  response.get(0);
-
+            return response.get(0);
         } catch (SQLException| IndexOutOfBoundsException throwables) {
             throwables.printStackTrace();
             throw new LoginFaildException();
