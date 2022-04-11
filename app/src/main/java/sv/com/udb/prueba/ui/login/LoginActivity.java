@@ -29,6 +29,8 @@ import sv.com.udb.prueba.ui.admin.dashboard;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String ADMIN = "ADMIN";
+    public static final String CLIENT = "CLIENT";
     private ActivityLoginBinding binding;
     private LoginRepositiory loginRepositiory;
 
@@ -58,17 +60,14 @@ public class LoginActivity extends AppCompatActivity {
 
         try {
             Usuario login = loginRepositiory.acceder(user, password);
-            boolean admin = "ADMIN".equals(login.getRole().getRole());
-            boolean client = "CLIENT".equals(login.getRole().getRole());
-            if (admin){
+            boolean isAdmin = ADMIN.equals(login.getRole().getRole());
+            if (isAdmin){
                 Intent i = new Intent(this, dashboard.class);
                 startActivity(i);
-            }
-            if (client){
+            }else {
                 Intent i = new Intent(this, HomeActivity.class);
                 startActivity(i);
             }
-
         }catch (Exception e){
             e.printStackTrace();
             showLoginFailed(e.toString());

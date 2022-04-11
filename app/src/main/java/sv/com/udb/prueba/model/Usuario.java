@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @DatabaseTable(tableName = "usuario")
-@Data
 public class Usuario {
 
     @DatabaseField(generatedId = true)
