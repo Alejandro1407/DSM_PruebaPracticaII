@@ -3,7 +3,9 @@ package sv.com.udb.prueba.adapter;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import sv.com.udb.prueba.interfaces.OnItemClickListener;
 
