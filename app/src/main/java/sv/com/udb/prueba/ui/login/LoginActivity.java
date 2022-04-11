@@ -1,9 +1,12 @@
 package sv.com.udb.prueba.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -12,13 +15,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import sv.com.udb.prueba.HomeActivity;
 import sv.com.udb.prueba.databinding.ActivityLoginBinding;
+import sv.com.udb.prueba.model.Role;
+import sv.com.udb.prueba.model.Usuario;
 import sv.com.udb.prueba.repositories.LoginRepositiory;
 import sv.com.udb.prueba.repositories.MarcasRepository;
+import sv.com.udb.prueba.ui.admin.dashboard;
 
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
+    private LoginRepositiory loginRepositiory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,44 +39,43 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        final TextInputLayout usernameEditText = (TextInputLayout) binding.username;
-        final TextInputLayout passwordEditText = (TextInputLayout) binding.password;
-        final Button loginButton = binding.login;
-        final ProgressBar loadingProgressBar = binding.loading;
+        final EditText usernameEditText = (EditText) binding.username;
+        final EditText passwordEditText = (EditText) binding.password;
+        binding.btnAcceder.setOnClickListener(this::btnAccederListener);
+        loginRepositiory = new LoginRepositiory((getApplicationContext()));
 
-        TextWatcher afterTextChangedListener = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // ignore
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // ignore
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // ignore
-            }
-
-
-        };
-
-
-
-
-        LoginRepositiory repositiory = new LoginRepositiory(getApplicationContext());
-        MarcasRepository marcasRepository = new MarcasRepository(getApplicationContext());
         try {
-           // marcasRepository.insert(new Marcas(1,"BMW"));
-        } catch (Exception e) {
-            e.printStackTrace();
+            loginRepositiory.create(new Usuario(null, "Matthew", "Gaitan", "mat@gmail.com", "Mat25", "123456", new Role(1, "ADMIN")));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
 
     }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
+    private void btnAccederListener(View view){
+        final String user = binding.username.getText().toString();
+        final String password = binding.password.getText().toString();
+
+        try {
+            Usuario login = loginRepositiory.acceder(user, password);
+            boolean admin = "ADMIN".equals(login.getRole().getRole());
+            boolean client = "CLIENT".equals(login.getRole().getRole());
+            if (admin){
+                Intent i = new Intent(this, dashboard.class);
+                startActivity(i);
+            }
+            if (client){
+                Intent i = new Intent(this, HomeActivity.class);
+                startActivity(i);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+            showLoginFailed(e.toString());
+        }
+    }
+
+    private void showLoginFailed(String errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
 }
