@@ -5,38 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".HomeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
+        android:background="#56A6A6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:navigationIcon="@drawable/menu" />
+        android:layout_marginBottom="150dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="34dp"
-        android:fontFamily="@font/bungee_regular"
-        android:textColor="@color/black"
-        android:text="Bienvenido" />
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/jeep_car"
+            android:layout_gravity="left"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="34dp"
-        android:text="User"
-        android:textColor="#8C1818"
-        android:fontFamily="@font/antic_regular"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="34sp"
+                android:fontFamily="@font/bungee_regular"
+                android:textColor="#fff"
+                android:layout_gravity="right"
+                android:text="Bienvenido" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginHorizontal="45dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="User"
+                android:textColor="#8C1818"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/banner_car"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp">
+
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="10dp"
+                android:text="Carros"/>
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="70dp"
+                android:backgroundTint="#8C1818"
+                android:text="Favoritos"
+                android:layout_marginLeft="40dp"/>
+        </LinearLayout>
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:layout_marginHorizontal="15dp"
+        android:text="® Right reserved | desing and develop by Alejo and Matthew"/>
 </LinearLayout>
