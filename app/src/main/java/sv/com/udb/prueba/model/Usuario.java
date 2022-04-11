@@ -31,6 +31,6 @@ public class Usuario {
     @DatabaseField
     private String password;
 
-    @DatabaseField(columnName = "fk_usuario_role_idx",foreign = true)
+    @DatabaseField(columnName = "fk_usuario_role_idx",foreign = true,foreignAutoRefresh = true)
     private Role role;
 }
