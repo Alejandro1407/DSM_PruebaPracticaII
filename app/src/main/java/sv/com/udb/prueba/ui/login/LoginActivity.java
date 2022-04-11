@@ -61,12 +61,15 @@ public class LoginActivity extends AppCompatActivity {
         try {
             Usuario login = loginRepositiory.acceder(user, password);
             boolean isAdmin = ADMIN.equals(login.getRole().getRole());
+            boolean isClient = ADMIN.equals(login.getRole().getRole());
             if (isAdmin){
                 Intent i = new Intent(this, dashboard.class);
                 startActivity(i);
-            }else {
+            }else if(isClient) {
                 Intent i = new Intent(this, HomeActivity.class);
                 startActivity(i);
+            }else {
+                throw new RuntimeException("User is not an admin or user or unexpected error");
             }
         }catch (Exception e){
             e.printStackTrace();
