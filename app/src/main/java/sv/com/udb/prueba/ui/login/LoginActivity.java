@@ -18,7 +18,6 @@ import sv.com.udb.prueba.repositories.MarcasRepository;
 
 public class LoginActivity extends AppCompatActivity {
 
-
     private ActivityLoginBinding binding;
 
     @Override
@@ -28,16 +27,10 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
         final TextInputLayout usernameEditText = (TextInputLayout) binding.username;
         final TextInputLayout passwordEditText = (TextInputLayout) binding.password;
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
-
-
-
-
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override

@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import sv.com.udb.prueba.db.ORMDatabaseHelper;
+import sv.com.udb.prueba.exceptions.EntityNotCreatedException;
 import sv.com.udb.prueba.exceptions.EntityNotFoundException;
 import sv.com.udb.prueba.exceptions.InvalidRepositoryException;
 
@@ -44,8 +45,11 @@ abstract class AbstractRepository<T,K> {
         return payload;
     }
 
-    public final void create(T payload) throws SQLException {
-        genericDao.create(payload);
+    public final void create(T payload) throws EntityNotCreatedException, SQLException {
+        int affectedRows = genericDao.create(payload);
+        if (affectedRows != 1){
+            throw new EntityNotCreatedException();
+        }
     }
 
     public final void update(T payload) throws SQLException {

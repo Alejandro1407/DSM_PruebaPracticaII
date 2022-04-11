@@ -6,17 +6,20 @@ import com.j256.ormlite.table.DatabaseTable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@DatabaseTable(tableName = "colores")
-public class Colores {
+@RequiredArgsConstructor
+@DatabaseTable(tableName = "marcas")
+public class Marca {
 
-    @DatabaseField(id = true)
+    @DatabaseField(id = true,canBeNull = false)
     private Integer id;
 
+    @NonNull
     @DatabaseField
-    private String descripcion;
-
+    private String nombre;
 }
