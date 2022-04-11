@@ -10,7 +10,8 @@
         <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/drawable/ui.xml" value="0.1265" />
         <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.16599732262382866" />
         <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1721311475409836" />
-        <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/layout/activity_home.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1265" />
         <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1265" />
         <entry key="..\:/Users/matthew_ramos/Documents/YouApp Mockups/DSM_PruebaPracticaII/app/src/main/res/mipmap-anydpi-v26/jeepLogo.xml" value="0.1265" />
@@ -23,5 +24,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>
