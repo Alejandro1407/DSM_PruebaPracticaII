@@ -16,7 +16,7 @@ public class Role {
     @DatabaseField(id = true)
     private Integer id;
 
-    @DatabaseField
+    @DatabaseField(columnName = "role")
     private String role;
 
 }

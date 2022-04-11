@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.admin.automovil.NewAutoActivity">
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Agregar Automovil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modelo:"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <EditText
+        android:id="@+id/txtModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Modelo"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/lblVin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# Vin"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+    <EditText
+        android:id="@+id/txtVin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# Vin"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <TextView
+        android:id="@+id/lblChasis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# Chasis"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+    <EditText
+        android:id="@+id/txtChasis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# Chasis"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <TextView
+        android:id="@+id/lblMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# Motor"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <EditText
+        android:id="@+id/txtMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# Motor"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="257dp" />
+
+    <TextView
+        android:id="@+id/lblAsientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# Asientos"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="324dp" />
+
+    <EditText
+        android:id="@+id/txtAsientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# Asientos"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
