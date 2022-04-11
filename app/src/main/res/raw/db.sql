@@ -29,7 +29,6 @@ CREATE TABLE usuario (
     email VARCHAR (45) NOT NULL,
     user VARCHAR (45) UNIQUE NOT NULL,
     password VARCHAR (45) NOT NULL,
-    tipo VARCHAR (45),
     fk_usuario_role_idx INT,
     FOREIGN KEY (fk_usuario_role_idx) REFERENCES role (id)
 );

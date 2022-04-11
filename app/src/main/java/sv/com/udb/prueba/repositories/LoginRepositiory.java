@@ -1,8 +1,8 @@
-package sv.com.udb.prueba.db;
+package sv.com.udb.prueba.repositories;
 
 import android.content.Context;
 
-import sv.com.udb.prueba.data.model.Usuario;
+import sv.com.udb.prueba.model.Usuario;
 
 public final class LoginRepositiory extends AbstractRepository<Usuario,Integer> {
     public LoginRepositiory(Context context){
