@@ -12,6 +12,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+import sv.com.udb.prueba.R;
+import sv.com.udb.prueba.data.model.Marcas;
 import sv.com.udb.prueba.databinding.ActivityLoginBinding;
 import sv.com.udb.prueba.repositories.LoginRepositiory;
 import sv.com.udb.prueba.repositories.MarcasRepository;
@@ -30,8 +35,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        final EditText usernameEditText = binding.username;
-        final EditText passwordEditText = binding.password;
+        final TextInputLayout usernameEditText = (TextInputLayout) binding.username;
+        final TextInputLayout passwordEditText = (TextInputLayout) binding.password;
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
 
@@ -57,8 +62,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
         };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
 
 
 
