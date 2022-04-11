@@ -46,13 +46,16 @@ public class Automovil {
     @DatabaseField
     private String descripcion;
 
-    @DatabaseField(columnName = "fk_automovil_marcas_idx")
-    private Integer fkMarcas;
+    @DatabaseField(columnName = "fk_automovil_marcas_idx",
+            foreign = true,foreignAutoRefresh = true)
+    private Marca marca;
 
-    @DatabaseField(columnName = "fk_automovil_tipo_automovil")
-    private Integer fkTipoAutomovil;
+    @DatabaseField(columnName = "fk_automovil_tipo_automovil",
+            foreign = true,foreignAutoRefresh = true)
+    private TipoAutomovil tipoAutomovil;
 
-    @DatabaseField(columnName = "fk_automovil_colores")
-    private Integer fkColores;
+    @DatabaseField(columnName = "fk_automovil_colores",
+            foreign = true,foreignAutoRefresh = true)
+    private Color colores;
 
 }

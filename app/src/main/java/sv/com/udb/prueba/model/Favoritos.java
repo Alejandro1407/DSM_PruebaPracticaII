@@ -18,10 +18,12 @@ public class Favoritos {
     @DatabaseField(id = true)
     private Integer id;
 
-    @DatabaseField(columnName = "fk_favoritos_automovil_usuario_idx",foreign = true)
+    @DatabaseField(columnName = "fk_favoritos_automovil_usuario_idx",
+            foreign = true,foreignAutoRefresh = true)
     private Usuario usuario;
 
-    @DatabaseField(columnName = "fk_favoritos_automovil_automovil_idx",foreign = true)
+    @DatabaseField(columnName = "fk_favoritos_automovil_automovil_idx",
+            foreign = true,foreignAutoRefresh = true)
     private Automovil automovil;
 
     @DatabaseField(columnName = "fecha_agregado")
