@@ -20,90 +20,289 @@
         android:id="@+id/lblModelo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="Modelo:"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="105dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtModelo"
+        app:layout_constraintEnd_toStartOf="@+id/txtModelo"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtModelo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="22dp"
         android:ems="10"
         android:hint="Modelo"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="79dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txtVin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblModelo"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lblVin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="11dp"
         android:text="# Vin"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="161dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtVin"
+        app:layout_constraintEnd_toStartOf="@+id/txtVin"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtVin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         android:hint="# Vin"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="146dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txtChasis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblVin"
+        app:layout_constraintTop_toBottomOf="@+id/txtModelo" />
 
     <TextView
         android:id="@+id/lblChasis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="17dp"
         android:text="# Chasis"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="211dp" />
+        app:layout_constraintEnd_toStartOf="@+id/txtChasis"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtChasis" />
 
     <EditText
         android:id="@+id/txtChasis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="# Chasis"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="204dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txtMotor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblChasis"
+        app:layout_constraintTop_toBottomOf="@+id/txtVin" />
 
     <TextView
         android:id="@+id/lblMotor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
         android:text="# Motor"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="268dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtMotor"
+        app:layout_constraintEnd_toStartOf="@+id/txtMotor"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtMotor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="# Motor"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txtAsientos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblMotor"
+        app:layout_constraintTop_toBottomOf="@+id/txtChasis" />
 
     <TextView
         android:id="@+id/lblAsientos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="10dp"
         android:text="# Asientos"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="324dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtAsientos"
+        app:layout_constraintEnd_toStartOf="@+id/txtAsientos"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtAsientos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="# Asientos"
         android:inputType="number"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="305dp" />
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/txtAnio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblAsientos"
+        app:layout_constraintTop_toBottomOf="@+id/txtMotor" />
+
+    <TextView
+        android:id="@+id/lblAnio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:text="Año:"
+        app:layout_constraintEnd_toStartOf="@+id/txtAnio"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtAnio" />
+
+    <EditText
+        android:id="@+id/txtAnio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:hint="Año"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblAnio"
+        app:layout_constraintTop_toBottomOf="@+id/txtAsientos"
+        tools:text="2000" />
+
+    <TextView
+        android:id="@+id/lblPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="9dp"
+        android:text="Precio $: "
+        app:layout_constraintBottom_toBottomOf="@+id/txtPrice"
+        app:layout_constraintEnd_toStartOf="@+id/txtPrice"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:hint="0.0"
+        android:inputType="numberDecimal"
+        android:text="100"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblPrecio"
+        app:layout_constraintTop_toBottomOf="@+id/txtAnio" />
+
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="descripcion"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/spMarca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblDescripcion"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+
+    <TextView
+        android:id="@+id/lblDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Descripcion"
+        app:layout_constraintEnd_toStartOf="@+id/txtDescripcion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtDescripcion" />
+
+    <Spinner
+        android:id="@+id/spMarca"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/spTipo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblMarca"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
+
+    <TextView
+        android:id="@+id/lblMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="18dp"
+        android:text="Marca:"
+        app:layout_constraintEnd_toStartOf="@+id/spMarca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spMarca" />
+
+    <Spinner
+        android:id="@+id/spTipo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="7dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/spColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblTipo"
+        app:layout_constraintTop_toBottomOf="@+id/spMarca" />
+
+    <Spinner
+        android:id="@+id/spColor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblColor"
+        app:layout_constraintTop_toBottomOf="@+id/spTipo" />
+
+    <TextView
+        android:id="@+id/lblTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="81dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tipo:"
+        app:layout_constraintEnd_toStartOf="@+id/spTipo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spTipo" />
+
+    <TextView
+        android:id="@+id/lblColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="16dp"
+        android:text="Color:"
+        app:layout_constraintEnd_toStartOf="@+id/spColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spColor" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="4dp"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/spColor"
+        app:layout_constraintTop_toBottomOf="@+id/spColor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
