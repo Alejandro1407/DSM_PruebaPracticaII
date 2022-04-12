@@ -12,7 +12,7 @@
             android:name=".ui.admin.automovil.EditAutoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.admin.dashboard"
+            android:name=".ui.admin.DashBoard"
             android:exported="false" />
         <activity
             android:name=".ui.admin.MarcasActivity"

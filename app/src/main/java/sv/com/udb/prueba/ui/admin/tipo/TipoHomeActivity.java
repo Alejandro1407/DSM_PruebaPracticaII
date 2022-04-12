@@ -33,6 +33,8 @@ public class TipoHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_marcas);
         binding = ActivityMarcasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        String title = getIntent().getStringExtra("Title");
+        binding.lblTitle.setText(title);
         binding.btnAceptar.setOnClickListener(this::btnAceptarListener);
         binding.btnEdit.setOnClickListener(this::btnEditarListener);
         binding.btnDelete.setOnClickListener(this::btnEliminarLister);

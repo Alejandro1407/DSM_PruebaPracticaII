@@ -33,10 +33,7 @@ public class ColorHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_marcas);
         binding = ActivityMarcasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        Bundle bundle = getIntent().getExtras();
-        String title = bundle.getString("Title");
-        Log.d("AQUI TITULO", title);
+        String title = getIntent().getStringExtra("Title");
         binding.lblTitle.setText(title);
         binding.btnAceptar.setOnClickListener(this::btnAceptarListener);
         binding.btnEdit.setOnClickListener(this::btnEditarListener);

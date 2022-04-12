@@ -29,7 +29,7 @@ public class AutoHomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-       init();
+        init();
     }
 
     @Override
@@ -42,11 +42,15 @@ public class AutoHomeActivity extends AppCompatActivity {
                 ,(Automovil automovil) -> System.out.println("Long Click baby"));
         binding.recyclerView.setAdapter(autoAdapter);
         autoRepository = new AutoRepository(getApplicationContext());
-        init();
+        binding.btnAdd.setOnClickListener(this::btnAddListener);
         registerForContextMenu(binding.recyclerView);
-        System.out.println("onCreate Called");
+        init();
     }
 
+    private void btnAddListener(View view){
+        Intent i = new Intent(this, NewAutoActivity.class);
+        startActivity(i);
+    }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {

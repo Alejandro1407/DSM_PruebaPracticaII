@@ -87,6 +87,7 @@ public class NewAutoActivity extends AppCompatActivity {
             Automovil instance = new Automovil(null,modelo,vin,chasis,motor,asientos,anio,asientos,precio,"",descripcion,actualMarca,actualTipo,actualColor);
             autoRepository.create(instance);
             showToast("Sucess!");
+            finish();
         }catch (Exception e){
             showToast("Failed to create new car");
         }

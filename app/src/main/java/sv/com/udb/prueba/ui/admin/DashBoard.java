@@ -15,7 +15,7 @@ import sv.com.udb.prueba.ui.admin.marcas.MarcaHomeActivity;
 import sv.com.udb.prueba.ui.admin.tipo.TipoHomeActivity;
 import sv.com.udb.prueba.ui.admin.usuarios.UsuariosActivity;
 
-public class dashboard extends AppCompatActivity {
+public class DashBoard extends AppCompatActivity {
 
     private ActivityDashboardBinding binding;
     private String title = "";
@@ -53,7 +53,9 @@ public class dashboard extends AppCompatActivity {
     }
 
     private void btnTipoListener(View view){
+        title = "Agregar Tipo";
         Intent i = new Intent(this, TipoHomeActivity.class);
+        i.putExtra("Title", title);
         startActivity(i);
     }
 

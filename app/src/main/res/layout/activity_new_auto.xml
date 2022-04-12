@@ -167,11 +167,11 @@
         android:ems="10"
         android:hint="Año"
         android:inputType="number"
+        android:text="2000"
         app:layout_constraintBottom_toTopOf="@+id/txtPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblAnio"
-        app:layout_constraintTop_toBottomOf="@+id/txtAsientos"
-        tools:text="2000" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAsientos" />
 
     <TextView
         android:id="@+id/lblPrecio"
