@@ -46,11 +46,11 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnAcceder.setOnClickListener(this::btnAccederListener);
         loginRepositiory = new LoginRepositiory((getApplicationContext()));
 
-        try {
+        /*try {
             loginRepositiory.create(new Usuario(null, "Matthew", "Gaitan", "mat@gmail.com", "Mat25", "123456", new Role(1, "ADMIN")));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
+        }*/
 
     }
 
