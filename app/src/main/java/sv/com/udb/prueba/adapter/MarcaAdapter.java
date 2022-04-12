@@ -11,6 +11,7 @@ import java.util.List;
 
 import sv.com.udb.prueba.R;
 import sv.com.udb.prueba.interfaces.OnItemClickListener;
+import sv.com.udb.prueba.interfaces.OnLongItemClickListener;
 import sv.com.udb.prueba.model.Marca;
 
 public class MarcaAdapter extends AbstractAdapter<Marca, MarcaAdapter.MarcaViewHolder> {
@@ -40,10 +41,17 @@ public class MarcaAdapter extends AbstractAdapter<Marca, MarcaAdapter.MarcaViewH
         }
 
         @Override
-        public void bind(Marca payload, int postion, OnItemClickListener<Marca> onItemClickListener) {
+        public void bind(Marca payload, int postion, OnItemClickListener<Marca> onItemClickListener,
+                         OnLongItemClickListener<Marca> onLongItemClickListener) {
             textView.setText(payload.getNombre());
             if(null != onItemClickListener){
                 itemView.setOnClickListener((View v) -> onItemClickListener.onClick(payload));
+            }
+            if(null != onLongItemClickListener){
+                itemView.setOnLongClickListener((View v) -> {
+                    onLongItemClickListener.onLongClick(payload);
+                    return false;
+                });
             }
 
         }
