@@ -11,6 +11,7 @@ import java.util.List;
 
 import sv.com.udb.prueba.R;
 import sv.com.udb.prueba.interfaces.OnItemClickListener;
+import sv.com.udb.prueba.interfaces.OnLongItemClickListener;
 import sv.com.udb.prueba.model.Color;
 
 public class ColorAdapter extends AbstractAdapter<Color, ColorAdapter.ColorViewHolder> {
@@ -39,12 +40,18 @@ public class ColorAdapter extends AbstractAdapter<Color, ColorAdapter.ColorViewH
         }
 
         @Override
-        public void bind(Color payload, int postion, OnItemClickListener<Color> onItemClickListener) {
+        public void bind(Color payload, int postion, OnItemClickListener<Color> onItemClickListener,
+                         OnLongItemClickListener<Color> onLongItemClickListener) {
             textView.setText(payload.getDescripcion());
             if(null != onItemClickListener){
                 itemView.setOnClickListener((View v) -> onItemClickListener.onClick(payload));
             }
-
+            if(null != onLongItemClickListener){
+                itemView.setOnLongClickListener((View v) -> {
+                    onLongItemClickListener.onLongClick(payload);
+                    return false;
+                });
+            }
         }
 
     }

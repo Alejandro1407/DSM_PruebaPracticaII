@@ -11,6 +11,7 @@ import java.util.List;
 
 import sv.com.udb.prueba.R;
 import sv.com.udb.prueba.interfaces.OnItemClickListener;
+import sv.com.udb.prueba.interfaces.OnLongItemClickListener;
 import sv.com.udb.prueba.model.TipoAutomovil;
 
 public class TipoAdapter extends AbstractAdapter<TipoAutomovil, TipoAdapter.TipoViewHolder> {
@@ -39,12 +40,24 @@ public class TipoAdapter extends AbstractAdapter<TipoAutomovil, TipoAdapter.Tipo
         }
 
         @Override
-        public void bind(TipoAutomovil payload, int postion, OnItemClickListener<TipoAutomovil> onItemClickListener) {
+        public void bind(TipoAutomovil payload, int postion, OnItemClickListener<TipoAutomovil> onItemClickListener,
+                         OnLongItemClickListener<TipoAutomovil> onLongItemClickListener) {
             textView.setText(payload.getDescripcion());
             if(null != onItemClickListener){
                 itemView.setOnClickListener((View v) -> onItemClickListener.onClick(payload));
             }
-
+            if(null != onLongItemClickListener){
+                itemView.setOnLongClickListener((View v) -> {
+                    onLongItemClickListener.onLongClick(payload);
+                    return true;
+                });
+            }
+            if(null != onLongItemClickListener){
+                itemView.setOnLongClickListener((View v) -> {
+                    onLongItemClickListener.onLongClick(payload);
+                    return false;
+                });
+            }
         }
 
     }
