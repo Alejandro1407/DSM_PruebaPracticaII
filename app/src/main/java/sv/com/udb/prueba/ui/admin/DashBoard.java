@@ -14,6 +14,7 @@ import sv.com.udb.prueba.ui.admin.color.ColorHomeActivity;
 import sv.com.udb.prueba.ui.admin.marcas.MarcaHomeActivity;
 import sv.com.udb.prueba.ui.admin.tipo.TipoHomeActivity;
 import sv.com.udb.prueba.ui.admin.usuarios.UsuariosActivity;
+import sv.com.udb.prueba.ui.login.LoginActivity;
 
 public class DashBoard extends AppCompatActivity {
 
@@ -31,6 +32,12 @@ public class DashBoard extends AppCompatActivity {
         binding.btnAuto.setOnClickListener(this::btnAutoListener);
         binding.btnColor.setOnClickListener(this::btnColorListener);
         binding.btnTipo.setOnClickListener(this::btnTipoListener);
+        binding.btnCerrar.setOnClickListener(this::btnCerrarListener);
+    }
+
+    private void btnCerrarListener(View view){
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 
     private void btnMarcaListener(View view){

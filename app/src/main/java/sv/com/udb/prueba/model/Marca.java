@@ -14,6 +14,9 @@ public class Marca {
     @DatabaseField
     private String nombre;
 
+    public Marca() {
+    }
+
     public Marca(String nombre) {
         this.nombre = nombre;
     }
