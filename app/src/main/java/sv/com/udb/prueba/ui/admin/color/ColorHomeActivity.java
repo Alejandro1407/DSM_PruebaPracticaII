@@ -1,6 +1,7 @@
 package sv.com.udb.prueba.ui.admin.color;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,6 +33,11 @@ public class ColorHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_marcas);
         binding = ActivityMarcasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Bundle bundle = getIntent().getExtras();
+        String title = bundle.getString("Title");
+        Log.d("AQUI TITULO", title);
+        binding.lblTitle.setText(title);
         binding.btnAceptar.setOnClickListener(this::btnAceptarListener);
         binding.btnEdit.setOnClickListener(this::btnEditarListener);
         binding.btnDelete.setOnClickListener(this::btnEliminarLister);

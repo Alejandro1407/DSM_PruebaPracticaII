@@ -11,7 +11,6 @@
         android:background="#56A6A6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -60,7 +59,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,13 +88,14 @@
                         android:textSize="30sp" />
 
                     <Button
+                        android:id="@+id/btnMarcas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:background="#00000000"
-                        android:textColor="#0B2B40"
                         android:fontFamily="@font/bungee_regular"
                         android:text="GO!"
+                        android:textColor="#0B2B40"
                         android:textSize="25dp" />
 
                 </RelativeLayout>
@@ -130,6 +130,7 @@
                     android:textSize="30sp" />
 
                 <Button
+                    android:id="@+id/btnAuto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -161,6 +162,7 @@
                         android:textSize="30sp" />
 
                     <Button
+                        android:id="@+id/btnColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
@@ -202,6 +204,7 @@
                     android:textSize="30sp" />
 
                 <Button
+                    android:id="@+id/btnTipo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
