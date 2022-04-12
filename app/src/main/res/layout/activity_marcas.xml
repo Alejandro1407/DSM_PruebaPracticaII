@@ -33,6 +33,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/bungee_regular"
+                android:text="User"
                 android:textColor="#fff"
                 android:textSize="34sp" />
 

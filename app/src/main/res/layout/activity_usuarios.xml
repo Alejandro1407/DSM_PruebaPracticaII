@@ -131,9 +131,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/slRol">
-
-        </Spinner>
+            android:id="@+id/slRol"/>
 
         <Button
             android:id="@+id/btnAgregar"
