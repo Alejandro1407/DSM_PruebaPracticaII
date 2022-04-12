@@ -3,12 +3,11 @@ package sv.com.udb.prueba.ui.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import sv.com.udb.prueba.HomeActivity;
+import sv.com.udb.prueba.ui.client.HomeActivity;
 import sv.com.udb.prueba.databinding.ActivityLoginBinding;
 import sv.com.udb.prueba.model.Usuario;
 import sv.com.udb.prueba.repositories.LoginRepositiory;
@@ -28,6 +27,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         binding.btnAcceder.setOnClickListener(this::btnAccederListener);
         loginRepositiory = new LoginRepositiory((getApplicationContext()));
+
+//        try{
+//
+//            loginRepositiory.create(new Usuario(5,"Alejandr","Alejo","alejandro714@gmail.com","alejo","12345",new Role(2,"CLIENT")));
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
     }
 
     private void btnAccederListener(View view){
@@ -37,12 +44,13 @@ public class LoginActivity extends AppCompatActivity {
         try {
             Usuario login = loginRepositiory.acceder(user, password);
             boolean isAdmin = ADMIN.equals(login.getRole().getRole());
-            boolean isClient = ADMIN.equals(login.getRole().getRole());
+            boolean isClient = CLIENT.equals(login.getRole().getRole());
             if (isAdmin){
                 Intent i = new Intent(this, DashBoard.class);
                 startActivity(i);
             }else if(isClient) {
                 Intent i = new Intent(this, HomeActivity.class);
+                i.putExtra("userId",login.getId());
                 startActivity(i);
             }else {
                 throw new RuntimeException("User is not an admin or user or unexpected error");
